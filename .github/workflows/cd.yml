@@ -1,0 +1,27 @@
+name: Continuous Deployment (CD)
+
+on:
+  push:
+    branches: [ "main" ]
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+  
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+  
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+
+  
+    - name: Run Deployment Script
+      run: |
+        echo "Starting deployment process..."
+        echo "Add your deployment commands here (e.g., SSH into server, deploy to Render/AWS/Heroku)"
+        echo "Deployment completed successfully!"
